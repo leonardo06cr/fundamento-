@@ -13,3 +13,8 @@ void main()
 	getch();
 }
 
+Proceso holamundo
+	Escribir 'holamundo'
+	Escribir "SOY: "
+	Escribir "LEONARDO C."
+FinProceso
