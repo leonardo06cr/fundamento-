@@ -26,7 +26,7 @@ void main()
 *****************************************
 Algoritmo areadeunparalelogramo
 	Escribir "Hey"
-	Escribir "Te ayudamos a calcular el area de un paralelogramos"
+	Escribir "Te ayudamos a calcular el area de un paralelogramo"
 	Escribir "Esribe la base"
 	Leer base
 	Escribir "Escribe la altura"
