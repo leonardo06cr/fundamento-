@@ -18,3 +18,15 @@ void main(){
 
 			 getch();
 }
+
+
+******************************************************************************************
+Proceso circunferenciaareayperimetro
+	Escribir "ingrese radio de la circunferencia";
+	Escribir "radio:";
+	Leer r;
+	a<-3.1415*r*r;
+	p<-2*3.1415*r;
+	escribir "el area de la circunferencia es:",a
+	escribir "el perimetro de la circunferencia es:",p
+FinProceso
