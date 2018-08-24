@@ -23,3 +23,20 @@ void main(){
 
 			 getch();
 }
+
+*************************************************************************
+
+Proceso intercambiovariable
+	Escribir "ingrese a:";
+	Leer a;
+	Escribir "ingrese b:";
+	Leer b;
+	c<-a;
+	a<-b;
+	b<-c;
+	Escribir "nuevo a:";
+	escribir a;
+	Escribir "escribi";
+	Escribir b;
+	
+FinProceso
