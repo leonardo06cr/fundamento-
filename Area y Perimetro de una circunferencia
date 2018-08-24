@@ -1,0 +1,20 @@
+include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main(){
+	float R,P,area;
+	cout<<"En este programa podras calcular el area y el perimetro de una circunferencia."<<endl;
+	cout<<"Solo ingresando el radio."<<endl;
+	cout<<"Radio:";
+	cin>>R;
+	
+	area=3.1415*R*R;
+	P=2*3.1415*R;
+	cout<<"El area de la circunferencia es :"<<area<<endl;
+	cout<<"El Perimetro de la Circunferenciaes es:"<<P<<endl;
+		
+
+			 getch();
+}
