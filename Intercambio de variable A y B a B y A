@@ -1,0 +1,25 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main(){
+	float A,B,aux;
+
+		cout<<"Ingrese dos numero entero... "<<endl;
+		cout<<"Ingrese A:";
+		cin>>A;
+		cout<<"Ingrese B:";
+		cin>>B;
+
+
+		aux=A;
+		A=B;
+		B=aux;
+
+		cout<<"el nuevo valor de A es:"<<A<<endl;
+		cout<<"El nuevo valor de B:"<<B<<endl;
+	
+
+			 getch();
+}
