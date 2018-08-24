@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "Math.h"
+using namespace std;
+
+void main(){
+	float p1,p2,p3,p4,p5,Total,x,descuesto;
+	cout<<"cuantos productos llevara?"<<endl;
+	cout<<"tenemos 6 produtos:"<<endl;
+	cout<<"el producto 1 cuesta 80 Bs.";
+	cout<<"el producto 2 cuesta 60 BS.";
+	cout<<"el producto 3 cuesta 90 Bs.";
+	cout<<"el producto 4 cuesta 120 Bs.";
+	cout<<"el producto 5 cuesta 20 Bs.";
+	cout<<"el producto 6 cuesta 200 bs.";
+	cout<<"ingrese cuandos productos llevara con la variable p y el numero del producto; Ej.(si es 1 ponga (p1) si son 2 (p2) y asi ...)"<<endl;
+	cout<<"ingrese (pi):"<<x;
+
+	if(
