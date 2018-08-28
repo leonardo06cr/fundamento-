@@ -6,7 +6,8 @@
 using namespace std;
 
 void main(){
-	float x1,y1,x2,y2,D,t;
+	float x1,y1,x2,y2;
+	double d;
 	cout<<"Vamos a encontra la distancia que hay de un punto a otro (x1,y1) y (x2,y2)"<<endl;
 	cout<<"Para esto necesito que asignes los puntos (x1,y1)"<<endl;
 	cout<<"x1:";
@@ -18,12 +19,27 @@ void main(){
 	cin>>x2;
 	cout<<"y2:";
 	cin>>y2;
-	//corregir lo de pow//
-	t=sqrt((pow(x2-x1),2)+(pow(y2-y1),2));
-	D=sqrt(t);
-	
-	cout<<"La distancia entre (x1,y1) Y (x2,y2) es de:"<<D<<endl;
+	d=sqrt(pow((x2-x1),2)+pow((y2-y1),2));
+	cout<<"La distancia entre (x1,y1) Y (x2,y2) es de:"<<d<<endl;
 	  
 
 			 getch();
 }
+
+****************************************************************************************************
+
+Algoritmo distanciadedospuntos
+	Escribir "Vamos a calcular la distancia entre dos puentos (x1,y1) y (x2,y2)";
+	Escribir "para esto necesito que ingreses los siguientes puntos";
+	Escribir "Ingrese x1:";
+	Leer x1;
+	Escribir "ingrese y1:";
+	Leer y1;
+	Escribir "Ahora ingrese en diguiente punto";
+	Escribir "Ingrese x2:";
+	Leer x2;
+	Escribir "Ingrese y2:";
+	Leer y2;
+	d<-(rc((x2-x1)^2)+((y2-y1)^2));
+	Escribir "La distacia de los dos puntos es de:",d;
+FinAlgoritmo
