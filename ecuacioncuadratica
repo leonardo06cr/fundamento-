@@ -35,3 +35,20 @@ using namespace std;
 		  getch();
  }
 			
+**************************************************************
+Algoritmo sin_titulo
+	Leer a
+	Leer b
+	Leer c
+	Si b*b-4*a*c>0 Entonces
+		Escribir "tiene 2 soluciones"
+	SiNo
+		Si b*b-4*a*c=0 Entonces
+			Escribir "tiene una solucion doble"
+		SiNo
+			Si b*b-4*a*c<0 Entonces
+				Escribir "no tiene solucion"
+			FinSi
+		FinSi
+	FinSi
+FinAlgoritmo
