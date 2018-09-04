@@ -1,0 +1,24 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+ void main()
+ {
+	 double numero,n,cantidad,suma;
+	 suma=0;
+	 numero=1;
+
+	 cout<<"cuantos veses desea sumar:";
+	 cin>>n;
+	 while(numero<=n)
+	 {
+		 cout<<"ingrese la cantidad :";
+		 cin>>cantidad;
+
+		 suma=suma+cantidad;
+		 numero=numero+1;
+	 }
+	 cout<<"la suma de las cantidades es de: "<<suma;
+	 getch();
+ }
+	 
