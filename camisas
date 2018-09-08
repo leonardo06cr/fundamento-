@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void main (){
+	float c=50,d1=0.20 ,d2=0.30, totalpagar,n,dt;
+
+  do{
+	   cout<<"ingrese cuantas camisa desea llevar:";
+       cin>>n;
+  }
+  while(n<=0);
+
+  if(n>=3){
+
+	  totalpagar=c*n;
+	  dt=totalpagar*d2;
+	  totalpagar=totalpagar-dt;
+  }
+  else{
+	  totalpagar=c*n;
+	  dt=totalpagar*d1;
+	  totalpagar=totalpagar-dt;
+  }
+  cout<<" El total que de be de pagar es de Bs..."<<totalpagar<<endl;
+  cout<<"Con un descuento de Bs..."<<dt;
+  
+  getch();
+  }
