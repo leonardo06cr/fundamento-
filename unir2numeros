@@ -1,0 +1,107 @@
+// fuciones.cpp : Defines the entry point for the console application.
+
+
+//
+
+
+
+#include "stdafx.h"
+
+
+#include <iostream>
+
+
+#include "conio.h"
+
+
+#include "stdio.h"
+
+
+#include "stdlib.h"
+
+
+using namespace std;
+
+
+
+int unir ( int n1, int n2);
+
+
+int cantidad_digitos(int n)
+
+
+
+void main(){   //UNIR DOS NUMEROS//
+
+
+	int n1,n2,nf;
+
+
+	cout<<"Ingrese N1";
+
+
+	cin>>n1;
+
+
+	cout<<"ingrese N2";
+
+
+	cin>>n2;
+
+
+
+	nf=unir(n1,n2);
+
+
+	cout<<"el numero concatenado es:"<<nf;
+
+
+
+	getch();
+
+
+}
+
+
+int cantidad_digito(int n){
+
+
+	int i=0;
+
+
+	while (n>0){
+
+
+		n=n/10;
+
+
+		i++;
+
+
+	}
+
+
+	return i;
+
+
+}
+
+
+
+int unir (int n1, int n2){
+
+
+	int nf, dig;
+
+
+
+	dig=cantidad_digitos(n2);
+
+
+	nf=n1*powf(10,dig)+n2;
+
+
+	return (nf);
+
+
+}
