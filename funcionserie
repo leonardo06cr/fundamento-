@@ -1,0 +1,45 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+
+using namespace std;
+
+float serie(int b, int n);//primero
+int factorial(int x);
+
+void main(){   //segundo
+	int b,n;       //son enteros
+	float result;     // es float por que si es otro me lo va a redondear//
+	cout<<"ingrese Base: ";
+	cin>>b;
+	cout<<"ingrese N:";
+	cin>>n;
+	result=serie(b,n);
+	cout<<"El resultado de la serie es:"<<result;
+	getch(); 
+  
+}
+int factorial(int x){//tercero
+	int fac=1 ,i=1;
+	while (i<=x){
+		fac=fac*1;
+	     i++;
+ }
+  return(fac);
+  }
+float serie(int b, int n){
+	float s=0;
+	int i=1;
+	while(i<=n){
+		s=s+powf(b,i)/factorial(i);
+		i++;
+	}
+	return (s);
+}
+
+
+	
