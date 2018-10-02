@@ -1,0 +1,27 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+int serie(int n);
+
+
+void main(){
+	int n,s;
+	float result;
+	cout<<"Ingrese n:";
+	cin>>n;
+	result=serie(n);
+	cout<<"el resultado de la suma al cuadrado es:"<<result;
+
+  getch();
+}
+
+int serie(int n){
+	int i=1,s=0;
+	while(i<=n){
+		s=s+i*i;
+		i=i+1;
+	}
+	return (s);
+}
