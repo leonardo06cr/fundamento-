@@ -1,0 +1,41 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+float suma(int n , int b);
+int factorial( int x);
+
+
+void main(){
+	int n,b;
+	float result;
+	cout<<"ingrese n:";
+	cin>>n;
+	cout<<"ingrese b:";
+	cin>>b;
+	result= suma(n,b);
+	cout<<"el resultado es:"<<result;
+	 
+	getch();
+}
+
+int factorial( int x){
+	int i=1, fac=1;
+	while (i<=x){
+		fac=fac*1;
+		i++;
+	}
+	return fac;
+}
+float suma(int n , int b){
+	int suma=0, i=1,f;
+	while(i<=n){
+		f=factorial(i);
+		suma=suma+powf(b,i)/f;
+		i++;
+	}
+	return suma;
+}
