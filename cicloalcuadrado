@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+float suma(int x,int n);
+
+
+void main(){
+	float result;
+	int x,n;
+	cout<<"ingrese x:";
+	cin>>x;
+	cout<<"ingrese n:";
+	cin>>n;
+	result=suma(x,n);
+	cout<<"el resultado es:"<<result;
+	getch();
+}
+float suma(int x, int n){
+	int suma=0, i=1;
+	while (i<=n){
+		suma=suma+powf(x,n);
+		i++;
+	}
+	return suma;
+}
