@@ -1,0 +1,86 @@
+
+#include "stdafx.h"
+
+
+#include <iostream>
+
+
+#include "conio.h"
+
+
+
+using namespace std;
+
+
+
+int invertir(int n);
+
+
+void capicua(int n);
+
+
+
+void main(){
+
+
+	int n,inv;
+
+
+	cout<<"Ingrese n";
+
+
+	cin>>n;
+
+
+	capicua(n);
+
+
+	getch();
+
+
+}
+
+
+int invertir(int n){
+
+
+	 int inv=0;
+
+
+	 while (n>0){
+
+
+		 inv=inv*10+n%10;
+
+
+		 n=n/10;
+
+
+	 }
+
+
+	 return inv;
+
+
+}
+
+
+void capicua(int n){
+
+
+	if(n==invertir(n)){
+
+
+		cout<<"El numero es capicua";
+
+
+	}else{
+
+
+		cout<<"El numero no es capicua";
+
+
+	}
+
+
+}
