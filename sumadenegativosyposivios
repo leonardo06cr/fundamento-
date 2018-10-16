@@ -1,86 +1,37 @@
 
 #include "stdafx.h"//ingresando numeros enteros mostrando los positivos y negativos
-
-
 #include <iostream>
-
-
 #include "conio.h"
-
-
 using namespace std;
-
 
 void pregunta4();
 
-
-
-　
-
-
 void main(){
 
-
 	pregunta4();
-
-
-
 	getch();
-
 
 }
 
-
-
 void pregunta4(){
-
-
 	int n, sp=0, sn=0;
-
-
 	do{
-
-
 		cout<<"ingres numero:"<<endl;
-
-
-		cin>>n;
-
-
+		cin>>n;        
 		if(n!=-999){
-
-
+		
 		if(n>=0){
-
-
 			sp=sp+n;
-
-
 		}else{
-
-
-			sn=sn+n;
-
-
+	         	sn=sn+n;
 		 }
-
-
 		}
-
-
 
 	}while(n!=-999);
 
-
-
 	cout<<"La suma de los positivos es:"<<sp<<endl;
-
-
 	cout<<"La suma de los negativos es:"<<sn;
-
-
 	getch();
-
 
 }
 
