@@ -1,0 +1,49 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#define MAX 100
+using namespace std;
+ 
+void cargar(int vec[],int n);
+void mostrar(int vec[],int n);
+void capicua(int vec[],int n);
+void main(){
+	int vec[MAX],n;
+	cout<<"ingrese n: ";
+	cin>>n;
+
+	cargar(vec,n);
+	mostrar(vec,n);
+
+	capicua(vec,n);
+
+	getch();
+}
+
+void cargar(int vec[], int n){
+	for(int i=0;i<n;i++){
+		cin>>vec[i];
+	}
+}
+void mostrar(int vec[],int n){
+	for(int i=0;i<n;i++){
+		cout<<vec[i]<<" , ";
+	}
+	cout<<endl;
+}
+
+void capicua(int vec[],int n){
+	int k=0;
+
+	for(int i=0;i<n/2;i++){
+		if(vec[i]!=vec[n-1-i]){
+			k=1;
+		}
+	}
+	if(k==0){
+		cout<<"El vector es capicua....";
+	}
+	else{
+		cout<<"E vector no es capicua...";
+	}
+}
