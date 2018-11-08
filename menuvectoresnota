@@ -1,0 +1,113 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+using namespace std;
+
+void cargarnotas(int vec[],int n);
+void mostrarnotas(int vec[],int n);
+void aproydes(int vec[],int n);
+void promdeapro(int vec[],int n);
+void mayornotas(int vec[],int n );
+
+void main(){
+int vec[MAX],n,opcion;
+
+do{
+	cout<<"Ingrese el tamaño: ";
+	cin>>n;
+}while(n<MAX && n>MAX);
+
+do{
+	cout<<"------MENU------"<<endl;
+	cout<<"1.-Cargar la notas"<<endl;
+	cout<<"2.-Mostrar las notas"<<endl;
+	cout<<"3.-Total de aprovados y desaprovado"<<endl;
+	cout<<"4.-Pormedio de los aprovados"<<endl;
+	cout<<"5.-Mostrar las notas mayores"<<endl;
+	cout<<"0.-salir"<<endl<<endl;
+	cout<<"Ingrese una opcion: ";
+	cin>>opcion;
+  switch(opcion){
+
+	case 1:
+		    cout<<"NOTAS CARGADAS"<<endl;
+		     cargarnotas(vec,n);
+		     ;break;
+	case 2:
+		    cout<<"NOTAS MOSTRADAS"<<endl<<endl;
+			mostrarnotas(vec,n);
+		    break;
+	case 3: 
+		    cout<<"TOTAL DE APROVADOS Y DESAPROVADO"<<endl<<endl;
+			aproydes(vec,n);
+			break;
+	case 4:
+		   cout<<"PROMEDIO DE LOS APROVADOS"<<endl<<endl;
+		   promdeapro(vec,n);
+		   break;
+	case 5: 
+           cout<<"LA MEJORES NOTAS"<<endl<<endl;
+		   mayornotas(vec,n);
+		   break;
+	case 0:
+		  cout<<"SALIR DEL PROGRAMA"<<endl<<endl;
+		  break;
+	default :
+		     cout<<"Opcion invalida";break;
+  }
+  getch();
+}while(opcion!=0);
+
+}
+
+void cargarnotas(int vec[],int n){
+	for(int i=0;i<n;i++){
+		cout<<"nota["<<i<<"]= ";
+		cin>>vec[i];
+	}
+}
+
+void mostrarnotas(int vec[],int n){
+	for(int i=0;i<n;i++){
+		cout<<"nota["<<i<<"]= "<<vec[i]<<endl;
+	}
+}
+
+void aproydes(int vec[],int n){
+	int cont=0;
+	int cont1=0;
+	for(int i=0;i<n;i++){
+		if(vec[i]>51 && vec[i]<100){
+			cont++;
+
+		}else{
+			cont1++;
+		}
+	}
+	 cout<<"Los aprovados son : "<<cont<<endl;
+
+	cout<<"Los desaprovados son : "<<cont1<<endl;
+}
+
+
+void promdeapro(int vec[],int n){
+	float s=0;
+	int cont=0;
+	for(int i=0;i<n;i++){
+		if(vec[i]>51){
+			s=s+vec[i];
+			cont++;
+		}
+	}
+	cout<<"El promedio de los aprobados es de : "<< s/cont<<endl;
+}
+
+void mayornotas(int vec[],int n ){
+	for(int i=0;i<n;i++){
+		if(vec[i]>80){
+			cout<<vec[i];
+		}
+	}
+}
