@@ -1,0 +1,64 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+using namespace std;
+
+void vocales (string nombre);
+void palabras (string nombre) ;
+void  consonantes(string nombre);
+
+void main(){
+	string nombre;
+	int longitud;
+	
+	cout<<"Ingrese la frase : ";
+    getline(cin,nombre);
+	cout<<endl;
+
+	vocales(nombre);
+	palabras(nombre);
+	consonantes(nombre);
+
+getch();
+}
+
+void vocales(string nombre){
+	int longitud;
+	int cont=0;
+	longitud=nombre.length();
+	for(int i=0;i<longitud;i++){
+		if((nombre[i] = 'a') || (nombre[i] = 'e') || (nombre[i] = 'i') || (nombre[i] = 'o') || (nombre[i]= 'u')) {
+			cont=cont+1;
+		}
+	}
+	cout<<"El total de la vocales es de : "<<cont;
+}
+
+
+	void palabras(string nombre){
+	int longitud;
+	int cont2=0;
+	longitud=nombre.length();
+	for(int i=0;i<longitud;i++){
+
+		if(nombre[i]=' '){
+			cont2++;
+		}
+	}
+	cout<<"E total de las palabras es de :"<<cont2+1;
+	}
+
+	void consonantes(string nombre){
+	int longitud;
+	int cont1=0;
+	longitud=nombre.length();
+	for(int i=0;i<longitud;i++){
+		if(nombre[i]!='a'&& nombre[i]!='e' && nombre[i]!='i'&& nombre[i]!='o' && nombre[i]!='u'){
+			cont1=cont1+1;
+		}
+	}
+	cout<<"Las consonantes en total son : "<<cont1;
+	}
