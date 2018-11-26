@@ -1,107 +1,28 @@
 
-
 #include "stdafx.h"
-
-
-
 #include <iostream>
-
-
-
 #include "conio.h"
 
+using namespace std;
+int invertir(int n);
 
+void main(){
+int n,inv;
+       cout<<"Ingrese n";
+       cin>>n;
+       inv=invertir(n);
+       cout<<"el numero invetido es :"<<inv;
 
- 
-
-
-
-using namespace
-std;
-
-
-
- 
-
-
-
-int
-invertir(int n);
-
-
-
- 
-
-
-
- 
-
-
-
-void
-main(){
-
-
-
-                int n,inv;
-
-
-
-                cout<<"Ingrese
-n";
-
-
-
-                cin>>n;
-
-
-
-                inv=invertir(n);
-
-
-
-                cout<<"el
-numero invetido es :"<<inv;
-
-
-
-                getch();
-
-
-
+   getch();
 }
 
-
-
-int
-invertir(int n){
-
-
-
-                 int inv=0;
-
-
-
-                 while (n>0){
-
-
-
-                                inv=inv*10+n%10;
-
-
-
-                                n=n/10;
-
-
-
-                 }
-
-
-
-                 return inv;
-
-
-
+int invertir(int n){
+   int inv=0;
+        while (n>0){
+          inv=inv*10+n%10;
+           n=n/10;
+       }
+   return inv;
 }
 
 
