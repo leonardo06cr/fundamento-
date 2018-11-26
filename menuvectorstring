@@ -27,7 +27,7 @@ void main(){
 	   cout<<"cual opcion desea?"<<endl;
 	   cin>>opcion;
 	   switch (opcion){
-	      case 1: resp=cargar(dato,tam); 
+	           case 1: resp=cargar(dato,tam); 
 		          break;
 		  case 2: if (resp==false)
 				      cout<<"Sin datos"<<endl;
