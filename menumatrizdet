@@ -1,0 +1,119 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#define MAX 20
+using namespace std;
+ 
+void cargarmat (int MAT[MAX][MAX],int n, int m);
+void mostrarmat(int MAT[MAX][MAX], int n,int m);
+int mayormat(int MAT[MAX][MAX],int n ,int m);
+void clasificarmat(int MAT[MAX][MAX],int n,int m);
+//void determinate3(int MAT [MAX][MAX],int n ,int m);
+
+void main(){
+	int MAT [MAX][MAX];
+	int n,m,opcion,mayor;
+
+	do{
+	cout<<"Ingrese el numero de filas : ";
+	cin>>n;
+	}while(n<0 || n>MAX);
+
+	do{
+		cout<<"Ingrese el numero de columnas: ";
+		cin>>m;
+	}while(m<0 || m>MAX);
+
+
+	do{
+
+		cout<<".-.-.-.-.-.MENU.-.-.-.-.-.-"<<endl;
+		cout<<"1.-Cargar la Matriz "<<endl;
+		cout<<"2.-Mostrar la matriz "<<endl;
+		cout<<"3.-Mostrar el mayor de la Matriz"<<endl;
+		cout<<"4.-Clasificar la Matriz"<<endl;
+		//cout<<"5.-de teminante de 3x3"<<endl;
+		cout<<"6.-Salir"<<endl;
+		cout<<"Ingrese la opcion que desee: ";
+		cin>>opcion;
+
+		switch(opcion){
+
+		case 1: cargarmat(MAT,n,m);
+			   break;
+
+		case 2:mostrarmat(MAT,n,m);
+			   break;
+
+		case 3:cout<<"El mayor es : " <<mayormat(MAT,n,m);
+			   break;
+		case 4: cout<<"Clasifcada es: ";
+					clasificarmat(MAT,n,m);
+			   break;
+		/*case 5: cout<<"El determinante es : ";
+					determinate3(MAT,n,m);
+			   break;*/
+		case 0: cout<<"Sair... ";
+			   break;
+
+		default :cout<<"Error";
+			   break;
+
+		}
+		getch();
+		system("cls");
+	}while(opcion!=0);
+}
+
+void cargarmat (int MAT[MAX][MAX],int n, int m){
+	for(int i=0;i<m;i++)
+		for(int j=0;j<n;j++){
+			cout<<"MAT["<<i<<"]["<<j<<"]= ";
+	        cin>>MAT[i][j];
+		}			
+}
+
+void mostrarmat(int MAT[MAX][MAX], int n,int m){
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+
+			cout<<MAT[i][j];
+			cout<<endl;
+		}
+	}
+}
+
+int mayormat(int MAT[MAX][MAX],int n ,int m){
+	int mayor;
+	     mayor=MAT[0][0];
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+
+			if(MAT[i][j]>mayor){
+				
+				mayor=MAT[i][j];
+			}
+		}
+	}
+	return mayor
+}
+
+void clasificarmat(int MAT[MAX][MAX],int n,int m){
+	int aux;
+	   for (int i=0;i<n;i++){
+		   for(int j=0;j<m;j++){
+			   for(int k=j+1;k<m;k++){
+
+				   if(MAT[i][j]<MAT[j][k]){
+
+					   aux=MAT[i][j];
+					   MAT[i][k]=MAT[i][j];
+					   MAT[i][j]=aux;
+				   }
+			   }
+		   }
+	   }
+}
+
+				
