@@ -1,0 +1,218 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include <string>
+
+using namespace std;
+
+void aprender(int &opcion); // Vamos a Aprender! (opcion 1)
+void glosario(); // Glosario (opcion 1.1)
+void tips(); // Tips (opcion 1.2)
+void test(); // Test (opcion 1.3)
+void Encriptado (int &opcion); // Menu principal de Encriptado (Opcion 2).
+void EncriptadoSubmenu(int &opcion); // Submenu de Enciptado (opcion 2.2).
+void MensajeEncriptado(int &opcion, string frase); // Funcion de encriptacion (opcion 2.2.1).
+void MensajeDesencriptado(int &opcion, string frase); // Funcion de desencriptacion (opcion 2.2.2).
+void SobreNosotros (int &opcion); // Conocer mas sobre SC Tech. (opcion 3)
+
+void main(){
+int opcion;
+
+do {
+cout<<endl<<"				--- Menu ---			"<<endl<<endl;
+cout<<"			1. Vamos a Aprender! "<<endl;
+cout<<"			2. Mensajes mas seguros. "<<endl;
+cout<<"			3. Conocer mas sobre SC Tech. "<<endl;
+cout<<"			0. Salir.			"<<endl;
+cout<<endl<<"			Digite la opcion: ";
+cin>>opcion;
+
+
+switch(opcion){
+	case 1: system("cls"); aprender(opcion);  system("cls");  break;
+	case 2: system("cls"); Encriptado(opcion); system("cls"); break;
+	case 3: system("cls"); SobreNosotros(opcion); system("cls"); break; 
+	default: if(opcion != 0) {
+			 system("cls"); cout<<"Marque una opcion valida."<<endl; getch(); system("cls");
+			 }
+}
+
+} while (opcion != 0);
+
+}
+
+// Vamos a Aprender! (opcion 1)
+void aprender(int &opcion){
+int op;
+do {
+cout<<endl<<"			--- Seccion de Aprendizaje ---"<<endl<<endl;
+cout<<"			1. Glosario."<<endl;
+cout<<"			2. Tips de Seguridad."<<endl;
+cout<<"			3. Hacer Test."<<endl;
+cout<<"			4. Atras."<<endl;
+cout<<"			0. Salir."<<endl<<endl;
+cout<<"			Digite la opcion: ";
+cin>>op;
+
+switch(op){
+	case 1: system("cls"); glosario(); getch(); system("cls"); break;
+	case 2: system("cls"); tips(); getch(); system("cls"); break;
+	case 3: system("cls"); test(); getch(); system("cls"); break;
+	case 4: system("cls"); op = 0; break;
+	case 0: system("cls"); opcion = 0; break;
+	default: system("cls"); if (op != 0) cout<<"Marque una opcion valida por favor."<<endl; getch(); system("cls");
+}
+} while (op != 0);
+}
+
+// Funcion del glosario (opcion 1.1)
+void glosario(){
+cout<<endl<<"				--- Glosario ---"<<endl<<endl;
+cout<<"1. Virus: Es un codigo maligno que infecta los ficheros del ordenador."<<endl<<endl;
+cout<<"2. Gusanos: Es un poco mas sofisticado que el virus ya que no necesita ser ejectado, también porque luego de que infecta el ordenador donde entre, realiza copias de si mismo y las distribuye por las redes o correos electrónicos para seguir infectando más y más ordenadores. "<<endl<<endl;
+cout<<"3. Troyano: No tienen como objetivo causar daño, tienen la unica tarea de entrar al sistema de forma desapercibida en algun ejecutable para luego abrir puertas traseras a programas que si son malisiosos."<<endl<<endl;
+cout<<"4. Spyware: Se trata de un programa diseñado para espiar, cuyo objetivo en la gran mayoria de los casos es el de obtener informacion."<<endl<<endl;
+cout<<"5. Adware: Su funcion principal es la de mostrar publicidad."<<endl<<endl;
+cout<<"6. Ransomware: Son programas diseñados para robar informacion, encriptando tus archivos haciendo que no puedas acceder a ellos a menos que cumplas los requisitos que pide el hacker y te proporcione la clave para desencriptarlo."<<endl<<endl;
+cout<<"7. Phishing: Es una estafa donde se hacen pasar por una empresa y/o organizacion el cual solicitan informacion confidencial (cuentas bancarias, claves, etc) al usuario a traves de correos masivos, llamadas telefonicas o mensajeria."<<endl<<endl;
+}
+
+// Funcion tips (opcion 1.2)
+void tips(){
+cout<<"Estos son los tips que les damos: "<<endl<<endl;
+cout<<"1. Tener instalado y actualizado algun antivirus."<<endl;
+cout<<"2. Tener cuidado y evitar las paginas que no tienen las siglas 'https' en el url."<<endl;
+cout<<"3. Utilizar claves diferentes para todas las cuentas."<<endl;
+cout<<"4. Evitar abrir correos basura (spam)."<<endl;
+cout<<"5. No conectar a redes wifi que no conoscas."<<endl;
+cout<<"6. Evitar poner informacion confidencia a paginas terceras."<<endl;
+}
+
+// Funcion test (opcion 1.3)
+void test(){
+int n[5], puntos = 0; // n es la respuesta dada por el usuario y puntos es el puntaje final que saca.
+int respuestas[5] = {2,1,3,2,1}; //Determinan la respuesta correcta.
+string preguntas[5]; // Aca se guardan las preguntas.
+
+//Preguntas del test
+preguntas[0] = "Un troyano es... \n1) Un virus creado para distribuir informacion personal. \n2) Es un malware diseñado para controlar de forma remota un ordenador. \n3) Es un virus que roba claves bancarias.";
+preguntas[1] = "El phishing consiste en... \n1) Pedir al usuario informacion confidencial robando haciendose pasar por otra empresa. \n2) Robar datos a traves de la encriptacion \n3) Falsificar el dinero con internet.";
+preguntas[2] = "Un virus es... \n1) Un sistema operativo malicioso. \n2) Un programa de gestion. \n3) Un codigo maligno que infecta los archivos del ordenador.";
+preguntas[3] = "Que siglas determinan que una pagina es segura? \n1) Httpu \n2) Https \n3) Httos";
+preguntas[4] = "El encriptado consiste en... \n1) Convertir el contenido de un mensaje en otro código para que pueda ser leído o interpretado en otro momento \n2) Navegar seguro por internet \n3) Una tecnica para dejar de recibir correos basura (spam). ";
+
+for(int i = 0; i < 5; i++) {
+	cout<<endl<<preguntas[i]<<endl;
+	cout<<endl<<"La respuesta es: ";
+	cin>>n[i];
+	if(n[i] == 1 || n[i] == 2 || n[i] == 3){ //Validar la respuesta.
+		if(respuestas[i] == n[i]){
+			puntos += 1;
+		} else {
+			cout<<endl<<"Te equivocaste!, La respuesta era el inciso: "<<respuestas[i];
+			getch();		
+		}		
+	} else i--;
+
+system("cls");
+}
+cout<<"Te ganaste "<<puntos<<"/5 pts.";
+if (puntos == 5)
+	cout<<endl<<"Aprobaste con buen puntaje!";
+if (puntos < 5 && puntos > 2)
+	cout<<endl<<"Aprobaste pero tienes que estudiar mas!";
+if (puntos <= 2)
+	cout<<endl<<"Lo siento pero haz reprobado.";
+}
+
+// Este es el menu principal de encriptado (opcion 2)
+void Encriptado(int &opcion) {
+int op;
+do {
+cout<<endl<<"			--- Mensajes Mas seguros ---			"<<endl<<endl;
+cout<<"			1. Mensajes mas seguros? Que es?		"<<endl;
+cout<<"			2. Crear un mensaje encriptado.		"<<endl;
+cout<<"			3. Atras.			"<<endl;
+cout<<"			0. Salir.			"<<endl<<endl;
+cout<<"			Ingrese opcion: ";
+cin>>op;
+	
+switch(op) {
+	case 1: system("cls"); cout<<endl<<endl<<"Podemos enviar mensajes mas seguros utilizando el metodo de encriptacion que consta";
+						   cout<<" en cambiar el valor de una letra en una palabra por otra dependiendo del algoritmo que se utilice."<<endl; getch(); system("cls"); break;
+	case 2: system("cls"); EncriptadoSubmenu(opcion);  system("cls"); break;
+	case 3: system("cls"); op = 0; break;
+	case 0: system("cls"); opcion = 0; break;
+	default: system("cls"); cout<<endl<<"Por favor marque una opcion valida."<<endl ; getch(); system("cls");
+}
+
+} while (op != 0);
+}
+
+//Este es el submenu de Encriptado (opcion 2.2)
+void EncriptadoSubmenu(int &opcion) {
+int op;
+string frase;
+do {
+cout<<endl<<"				--- Encriptacion ---"<<endl<<endl;
+cout<<"			1. Encriptar mensaje."<<endl;
+cout<<"			2. Desencriptar mensaje."<<endl;
+cout<<"			3. Atras."<<endl;
+cout<<"			0. Salir."<<endl<<endl;
+cout<<"			Digite la opcion: ";
+cin>>op;
+
+switch(op) {
+	case 1: system("cls"); cout<<"Escriba su frase: "; cin.ignore(); getline(cin, frase); MensajeEncriptado(opcion, frase); getch(); system("cls"); break;
+	case 2: system("cls"); cout<<"Escriba su frase: "; cin.ignore(); getline(cin, frase); MensajeDesencriptado(opcion, frase); getch(); system("cls"); break;
+	case 3: system("cls"); op = 0; break;
+	case 0: system("cls"); opcion = 0; break;
+default: system("cls"); cout<<"Digite una opcion valida."; getch(); system("cls");
+	} 
+} while (op != 0);
+}
+
+//Aca esta la funcion de Encriptado (opcion 2.2.1)
+void MensajeEncriptado(int &opcion, string frase) {
+for (int i = 0; i < frase.length(); i++) 
+	frase[i] += 3;
+
+cout<<"Su frase encriptada es: "<<frase<<endl;
+}
+
+// Aca esta la funcion de Desencriptado (opcion 2.2.2)
+void MensajeDesencriptado(int &opcion, string frase) {
+for (int i = 0; i < frase.length(); i++) 
+	frase[i] -= 3;
+
+cout<<"Su frase encriptada es: "<<frase<<endl;
+}
+
+// Conocer mas sobre SC Tech. (opcion 3)
+void SobreNosotros(int &opcion){
+int op;
+do {
+cout<<endl<<"				--- Info ---			"<<endl<<endl;
+cout<<"			1. Quienes somos?"			<<endl;
+cout<<"			2. Nuestra mision"			<<endl;
+cout<<"			3. Miembros del equipo."			<<endl;
+cout<<"			4. Atras."			<<endl;
+cout<<"			0. Salir"			<<endl;
+cout<<endl<<"			Digite la opcion: ";
+cin>>op;
+
+switch(op) {
+	case 1: system("cls"); cout<<endl<<"SC Tech se creo al ver que muchas personas no toman las medidas necesarias para la proteccion contra ataques informaticos."<<endl; getch(); system("cls"); break;
+	case 2: system("cls"); cout<<endl<<"Nuestra mision es brindar informacion y asi proteccion a nuestros clientes contra ataques informaticos."<<endl; getch(); system("cls"); break;
+	case 3: system("cls"); cout<<endl<<"				--- Equipo ---"<<endl<<endl;
+			cout<<"				Waldo Ortega."<<endl; 
+			cout<<"				Mauricio Franco."<<endl;
+			cout<<"				Leonardo Cardona."<<endl;
+			cout<<"				Daiki Chibana."<<endl; getch(); system("cls"); break;
+	case 4: system("cls"); op = 0; break;
+	case 0: system("cls"); opcion = 0; break;
+	default: system("cls"); cout<<endl<<"Por favor marque una opcion valida."<<endl ; getch(); system("cls");
+}
+} while (op != 0);
+}
